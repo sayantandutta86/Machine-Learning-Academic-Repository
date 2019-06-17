@@ -1,2 +1,2 @@
 # Machine-Learning-code-repository
-Code repository of my Machine Learning projects.
+My Machine Learning code repository.
