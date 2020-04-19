@@ -114,3 +114,30 @@ def find_analogies(w1, w2, w3, We, word2idx, idx2word):
 
         print("Closest match by", dist, "distance:", best_word)
         print(w1, "-", w2, "=", best_word, "-", w3)
+
+def get_bigram_probs(sentences, V, start_idx, end_idx, smoothing=1):
+    # structure of bigram probability matrix will be:
+    # (last word, current word) --> probability
+    # we will use add-1 smoothing
+    # note: we will always ignore this from the END token
+    bigram_probs = np.ones((V,V)) * smoothing
+    
+    for sentence in sentences:
+        for i in range(len(sentence)):
+            if i == 0:
+                #beginning word
+                bigram_probs[start_idx, sentence[i]] += 1
+            else:
+                #middle word
+                bigram_probs[sentence[i-1], sentence[i]] += 1
+
+            #if we are at the final word 
+            #we update the bigram for last --> current 
+            #and current --> END token
+            if i == len(sentence) - 1:
+                #final word
+                bigram_probs[sentence[i], end_idx] += 1
+
+    #normalize the counts along the rows to get probabilities
+    bigram_probs /= bigram_probs.sum(axis=1, keepdims=True)
+    return bigram_probs
