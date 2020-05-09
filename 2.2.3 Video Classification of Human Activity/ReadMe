@@ -1,1 +1,3 @@
-Human Action Recognition (Pytorch)
+Video Classification of Human Activity (Advisor: Dr. Justin A. Sirignano): 
+Based on UCF101: Video Dataset of 101 Human Actions, compared a single frame model (spatial information only) with 3D convolution based model (2 spatial dimension + 1 temporal dimension)  
+
