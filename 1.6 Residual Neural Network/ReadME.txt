@@ -1,1 +1,0 @@
-Residual Neural Network

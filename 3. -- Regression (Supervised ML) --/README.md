@@ -1,2 +1,0 @@
-# REGRESSION IN SUPERVISED MACHINE LEARNING
-Projects and Case Studies
