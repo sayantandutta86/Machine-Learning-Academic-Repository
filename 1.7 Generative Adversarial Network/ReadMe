@@ -1,1 +1,5 @@
 Generative Adversarial Network
+
+Train a Generative Adversarial Network on the CIFAR10 dataset.
+
+Create synthetic images maximizing class output scores or particular features.
